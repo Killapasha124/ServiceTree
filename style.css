@@ -1,0 +1,94 @@
+.tree ul {
+	padding-left: 20px;
+	position: relative;
+	overflow: hidden;
+}
+
+.tree ul:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -10px;
+	width: 10px;
+	border-left: 1px solid #888;
+	transition: all 0.3s ease;
+}
+
+.tree li {
+	list-style-type: none;
+	position: relative;
+	padding-left: 20px;
+}
+
+.tree li:last-child:before {
+	background: transparent;
+}
+
+.tree li.parent_li>span {
+	cursor: pointer;
+	color: rgb(0, 102, 255);
+	text-decoration: none;
+	position: relative;
+}
+
+.tree li.parent_li>span:before {
+	content: '';
+	position: absolute;
+	left: -20px;
+	top: 5px;
+	border-width: 0 0 1px 1px;
+	border-style: solid;
+	border-color: black;
+	width: 10px;
+	height: 10px;
+	transform: rotate(-45deg);
+	transition: all 0.3s ease;
+
+}
+
+.tree li.parent_li.open>span:before {
+	transform: rotate(45deg);
+}
+
+
+.tree li span {
+	display: inline-block;
+	padding: 5px;
+	border-radius: 5px;
+	background: #f0f0f0;
+	margin-top: 5px;
+}
+
+.tree li .price {
+	color: green;
+	background:none;
+}
+
+.tree li>ul {
+	display: none;
+	overflow: hidden;
+}
+
+.tree li.open>ul {
+	display: block;
+}
+
+.tree li.parent_li>span {
+	cursor: pointer;
+	position: relative;
+	display: inline-block;
+	padding: 5px;
+	border-radius: 3px;
+	transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.tree li.parent_li>span:hover {
+	color: darkblue;
+	border-color: darkblue;
+}
+
+.tree li.parent_li.open>span {
+	color: darkblue;
+	border-color: darkblue;
+
+}
